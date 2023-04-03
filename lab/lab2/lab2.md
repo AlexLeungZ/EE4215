@@ -16,6 +16,10 @@ PORT   STATE SERVICE VERSION
 
 ## Step 2 - Use msfconsole
 
+```bash
+msfconsole
+```
+
 ### Step 2.1
 
 ```bash
