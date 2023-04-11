@@ -183,7 +183,26 @@ admin:secret:1000:1000::/home/admin:/bin/bash
 - The password for root user: toor
 - The password for admin user: secret
 
-### Terminal output
+## Password hash cheatsheet
+
+1. Format
+
+    ```bash
+    $id$salt$hashed
+    ```
+
+2. ID table
+
+    ```bash
+    $1 - MD5
+    $2a - Blowfish
+    $4 - SHA256
+    $5 - SHA512
+    $7 - Yescrypt
+    $y - Yescrypt
+    ```
+
+## Terminal output
 
 - [tmux session 1](tmux1.txt)
 

@@ -61,7 +61,7 @@ run
 [*] Command shell session 1 opened (10.5.0.1:4444 -> 10.5.1.11:46394) at 2023-03-27 03:40:12 +0000
 ```
 
-### Step 3 - Now you are in the target machine
+## Step 3 - Now you are in the target machine
 
 ```bash
 whoami
@@ -98,7 +98,7 @@ usr
 var
 ```
 
-### Terminal output
+## Terminal output
 
 - [tmux session 1](tmux1.txt)
 
