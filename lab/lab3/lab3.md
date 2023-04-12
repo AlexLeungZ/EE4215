@@ -149,6 +149,8 @@ admin:$y$j9T$Yaz43eoUN1NuXP7TFkdfK.$Xq1oDzJ8GsDNaMc/qSk1DacGMqIsTRdP3MjhQQQdZ35:
 
 ### Step 2.3 Use john with --format=crypt as the method was $y$
 
+- [Hash-formats cheatsheet](https://pentestmonkey.net/cheat-sheet/john-the-ripper-hash-formats)
+
 ```bash
 john crack.db --format=crypt
 ```
