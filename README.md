@@ -14,7 +14,7 @@ Assignments and Quiz for CityU EE4215.
    * Python 3.10+
    * Jupyter notebook with python kernel
    * Package management: conda or mamba
-   * Library: pandas, numpy, seaborn, matplotlib, sklearn, sage
+   * Library: pandas, numpy, sage
 
 ### Install Conda or mamba (mini-conda)
 
@@ -33,5 +33,7 @@ mamba activate sage
 ```bash
 # conda or mamba
 conda install -c conda-forge Jupyter ipykernel
-conda install -c conda-forge sage pandas numpy seaborn matplotlib scikit-learn
+conda install -c conda-forge sage pandas numpy
 ```
+
+### [Lab Result](./lab/readme.md)

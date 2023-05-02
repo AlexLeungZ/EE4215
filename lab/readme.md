@@ -12,12 +12,20 @@ chmod 400 labsuser.pem
 ssh -i labsuser.pem labuser@ip
 ```
 
+## Result
+
+### [Lab1](./lab1/lab1.md)
+
+### [Lab2](./lab2/lab2.md)
+
+### [Lab3](./lab3/lab3.md)
+
 ## tmux capture
 
 ### Within terminal
 
 ```bash
-tmux capture-pane -pS -1000000 > out.txt
+tmux capture-pane -pS -10000 > out.txt
 ```
 
 ### Within tmux
